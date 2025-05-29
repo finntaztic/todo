@@ -1,7 +1,3 @@
-
-//this part make class to add book from the array to the 
-
-
 class Task {
     #title;
     #description;
@@ -15,8 +11,9 @@ class Task {
         this.#id = id;
     }
 
-    addTask (){
-        const addTaskBtn = document.querySelector ()
+    getTitle (){
+        return this.#title;
     }
 }
-export {handleEnterTaskClick}
+
+export { Task }

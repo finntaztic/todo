@@ -1,5 +1,7 @@
-import { openDialog } from './eventHandlers.js'
+//main .js
 
-openDialog()
+import { UI } from "./domHandler";
 
+
+UI.init();
 
