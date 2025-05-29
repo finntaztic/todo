@@ -6,8 +6,28 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <nav><button class="add-task-btn">Add New Task</button></nav>
-    </header>
+    <div class="add-task-row">
+        <button class="btn-open-dialog">Add New Task</button>
+        <div class="task-list"></div>  
+    </div>
+    <dialog>
+        <h1>Add new task</h1>
+        <form>
+            <label for="title">Title</label><br>
+            <input type="text" id="title" name="title"><br>
+
+            <label for="description">Description</label><br>
+            <input type="description" id="description" name="description"><br>
+
+            <label for="priority">Priority</label><br>
+                <select name="priority" id="priority">
+                    <option value="High">⭐️⭐️⭐️</option>
+                    <option value="Mid">⭐️⭐️</option>
+                    <option value="Low">⭐️</option>
+                </select>
+            
+            <button class="enter-task-btn">Add new Task</button>
+        </form>
+    </dialog>
 </body>
 </html>
