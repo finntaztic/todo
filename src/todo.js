@@ -11,10 +11,17 @@ const Todo = (() => {
     }
 
     function removeBook(id){
+
+        //variable of the delete button head
+        // where will id comes from tho?? the e.target id?? 
         
+        //get the id of where the button belongs and then delete the tr
+        // console.log('hello');
+        // console.log(e.target.parentNode);
+        // e.target.parentNode.remove();
     }
 
-    return {addTodo};
+    return {addTodo, removeBook};
 })();
 
 export {Todo}
