@@ -14,6 +14,11 @@ class Task {
     getTitle (){
         return this.#title;
     }
+
+    getID () {
+        return this.#id = id;
+    }
 }
+
 
 export { Task }
