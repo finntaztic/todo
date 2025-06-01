@@ -18,8 +18,12 @@ const UI = (() => {
         e.preventDefault();
 
         const titleInput = document.querySelector('#title').value;
+        const descriptionInput = document.querySelector('#description').value;
+        const dateInput = document.querySelector('#date').value;
 
-        const todo = new Task (titleInput);
+
+
+        const todo = new Task (titleInput, descriptionInput, dateInput);
         Todo.addTodo(todo)
         renderTask(todo)
         dialog.close();
@@ -27,11 +31,12 @@ const UI = (() => {
 
     function renderTask (todo){
         const tr = document.createElement('tr');
-        console.log (todo.getTitle())
         
         tr.innerHTML = `
             <input type="checkbox" id="todo" name="todo" />
-            <label for="todo">${todo.getTitle()}</label>
+            <label for="todo">${todo.getTitle()}</label><br>
+            <p>${todo.getDescription()}</p><br>
+            <p>${todo.getDate()}</p><br>
             <td><button class="delete-button">Delete</button></td>`
             
         tbody.appendChild(tr);
@@ -42,10 +47,6 @@ const UI = (() => {
             tr.remove();
         })
     }
-    //add function that would add the contetn in the wepbpage
-
-    //renderboard will ahdnle appending shit
-
     return { init };
 })();
 
