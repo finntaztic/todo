@@ -11,7 +11,8 @@ const Todo = (() => {
     }
 
     function removeBook(id){
-
+        const index = todos.findIndex(todo => todo.getID() === id);
+        if (index !== -1) todos.splice(index, 1);
         //variable of the delete button head
         // where will id comes from tho?? the e.target id?? 
         

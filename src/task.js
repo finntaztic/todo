@@ -16,7 +16,7 @@ class Task {
     }
 
     getID () {
-        return this.#id = id;
+        return this.#id;
     }
 }
 

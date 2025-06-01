@@ -38,7 +38,8 @@ const UI = (() => {
 
         const btnDelete = document.querySelector('.delete-button');
         btnDelete.addEventListener('click', () => {
-            Todo.removeBook()
+            Todo.removeBook(todo.getID());
+            tr.remove();
         })
     }
     //add function that would add the contetn in the wepbpage
