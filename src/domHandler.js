@@ -37,15 +37,27 @@ const UI = (() => {
             <label for="todo">${todo.getTitle()}</label><br>
             <p>${todo.getDescription()}</p><br>
             <p>${todo.getDate()}</p><br>
-            <td><button class="delete-button">Delete</button></td>`
+            <button class="delete-button">Delete</button>`
             
         tbody.appendChild(tr);
 
-        const btnDelete = document.querySelector('.delete-button');
-        btnDelete.addEventListener('click', () => {
-            Todo.removeBook(todo.getID());
-            tr.remove();
+        const btnDelete = document.querySelectorAll('.delete-button');
+        console.log(btnDelete)
+
+        btnDelete.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                console.log('button clicked')
+                console.log(e.target.parentNode);
+                e.target.parentNode.remove();
+            })
         })
+        // for (let i = 0; i < btnDelete.length; i++){
+        //     btnDelete[i].addEventListener('click', (e) => {
+        //         console.log('button clicked')
+        //         // console.log(e.target.parentNode);
+        //         // e.target.parentNode.remove();
+        //     })
+        // }
     }
     return { init };
 })();

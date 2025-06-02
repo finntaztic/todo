@@ -10,11 +10,13 @@ const Todo = (() => {
         console.log(todos);
     }
 
-    function removeBook(id){ //this is a bit too advanced for me, i used chatgpt
-        const index = todos.findIndex(todo => todo.getID() === id);
-        if (index !== -1) todos.splice(index, 1);
+    function removeTodo(e){ 
+        const parent = e.target.parentNode;
+        console.log('button clicked');
+        console.log(parent);
+        parent.remove();
     }
-    return {addTodo, removeBook};
+    return {addTodo, removeTodo};
 })();
 
 export {Todo}
