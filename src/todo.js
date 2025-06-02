@@ -8,15 +8,7 @@ const Todo = (() => {
         console.log(todos);
     }
 
-    function removeTodo(){ 
-        const btnDelete = document.querySelectorAll('.delete-button');
-            btnDelete.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.target.parentNode.remove();
-            })
-        })  
-    }
-    return {addTodo, removeTodo};
+    return {addTodo};
 })();
 
 export {Todo}

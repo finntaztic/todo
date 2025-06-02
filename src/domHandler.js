@@ -7,9 +7,10 @@ const UI = (() => {
     const btnAddDialog = document.querySelector('.btn-add-task');
     const tbody = document.querySelector('tbody')
 
+
     function init (){
         btnOpenDialog.addEventListener('click', () => dialog.showModal());
-        btnAddDialog.addEventListener('click', handleAddTodo) 
+        btnAddDialog.addEventListener('click', handleAddTodo);
     }
 
     function handleAddTodo (e){
@@ -18,8 +19,10 @@ const UI = (() => {
         const titleInput = document.querySelector('#title').value;
         const descriptionInput = document.querySelector('#description').value;
         const dateInput = document.querySelector('#date').value;
+        const priorityInput = document.querySelector('#priority').value;
 
-        const todo = new Task (titleInput, descriptionInput, dateInput);
+
+        const todo = new Task (titleInput, descriptionInput, dateInput, priorityInput);
         Todo.addTodo(todo)
         renderTask(todo)
         dialog.close();
@@ -33,18 +36,17 @@ const UI = (() => {
             <label for="todo">${todo.getTitle()}</label><br>
             <p>${todo.getDescription()}</p><br>
             <p>${todo.getDate()}</p><br>
+            <p>${todo.getPriority()}</p><br>
             <button class="delete-button">Delete</button>`
             
         tbody.appendChild(tr);
 
-        todo.removeTodo();
-        // //delete button
-        // const btnDelete = document.querySelectorAll('.delete-button');
-        // btnDelete.forEach(btn => {
-        //     btn.addEventListener('click', (e) => {
-        //         e.target.parentNode.remove();
-        //     })
-        // })  
+        const btnDelete = document.querySelectorAll('.delete-button');
+            btnDelete.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.target.parentNode.remove();
+            })
+        })  
     }
 
     return { init };
