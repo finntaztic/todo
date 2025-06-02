@@ -7,8 +7,6 @@ const UI = (() => {
     const btnAddDialog = document.querySelector('.btn-add-task');
     const tbody = document.querySelector('tbody')
 
-
-
     function init (){
         btnOpenDialog.addEventListener('click', () => dialog.showModal());
         btnAddDialog.addEventListener('click', handleAddTodo) 
@@ -20,8 +18,6 @@ const UI = (() => {
         const titleInput = document.querySelector('#title').value;
         const descriptionInput = document.querySelector('#description').value;
         const dateInput = document.querySelector('#date').value;
-
-
 
         const todo = new Task (titleInput, descriptionInput, dateInput);
         Todo.addTodo(todo)
@@ -41,24 +37,16 @@ const UI = (() => {
             
         tbody.appendChild(tr);
 
-        const btnDelete = document.querySelectorAll('.delete-button');
-        console.log(btnDelete)
-
-        btnDelete.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                console.log('button clicked')
-                console.log(e.target.parentNode);
-                e.target.parentNode.remove();
-            })
-        })
-        // for (let i = 0; i < btnDelete.length; i++){
-        //     btnDelete[i].addEventListener('click', (e) => {
-        //         console.log('button clicked')
-        //         // console.log(e.target.parentNode);
-        //         // e.target.parentNode.remove();
+        todo.removeTodo();
+        // //delete button
+        // const btnDelete = document.querySelectorAll('.delete-button');
+        // btnDelete.forEach(btn => {
+        //     btn.addEventListener('click', (e) => {
+        //         e.target.parentNode.remove();
         //     })
-        // }
+        // })  
     }
+
     return { init };
 })();
 

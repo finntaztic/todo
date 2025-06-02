@@ -1,6 +1,4 @@
 // Manages todos (add, remove, store)
-
-
 const Todo = (() => {
     const todos = [];
 
@@ -10,11 +8,13 @@ const Todo = (() => {
         console.log(todos);
     }
 
-    function removeTodo(e){ 
-        const parent = e.target.parentNode;
-        console.log('button clicked');
-        console.log(parent);
-        parent.remove();
+    function removeTodo(){ 
+        const btnDelete = document.querySelectorAll('.delete-button');
+            btnDelete.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.target.parentNode.remove();
+            })
+        })  
     }
     return {addTodo, removeTodo};
 })();
