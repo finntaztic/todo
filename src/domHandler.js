@@ -2,15 +2,20 @@ import { Task } from "./task";
 import { Todo } from "./todo";
 
 const UI = (() => {
-    const dialog = document.querySelector('dialog');
+    const dialogNewTask = document.querySelector('.dialog-new-task');
+    const dialogNewProject = document.querySelector('.dialog-new-project');
     const btnOpenDialog = document.querySelector('.btn-open-dialog');
     const btnAddDialog = document.querySelector('.btn-add-task');
+    const btnOpenProject = document.querySelector('.btn-open-project');
+    const btnAddProject = document.querySelector('.btn-add-project');
     const tbody = document.querySelector('tbody')
 
 
     function init (){
-        btnOpenDialog.addEventListener('click', () => dialog.showModal());
+        btnOpenDialog.addEventListener('click', () => dialogNewTask.showModal());
         btnAddDialog.addEventListener('click', handleAddTodo);
+        btnOpenProject.addEventListener('click', () => dialogNewProject.showModal());
+        btnAddProject.addEventListener('click', handleAddproject);
     }
 
     function handleAddTodo (e){
@@ -25,7 +30,7 @@ const UI = (() => {
         const todo = new Task (titleInput, descriptionInput, dateInput, priorityInput);
         Todo.addTodo(todo)
         renderTask(todo)
-        dialog.close();
+        dialogNewTask.close();
     }
 
     function renderTask (todo){
@@ -49,8 +54,20 @@ const UI = (() => {
         })  
     }
 
-    function addProject (){
-        const opt = document.createElement('')
+    function handleAddproject (e){
+        e.preventDefault();
+        renderProject()
+        dialogNewProject.close();
+    }
+
+    function renderProject (){
+        const projectInput = document.querySelector('#addProject').value;
+        const ul = document.querySelector('.project-list')
+        const li = document.createElement('li');
+        const projectList = document.createTextNode(projectInput);
+
+        li.appendChild(projectList);
+        ul.appendChild(li);
     }
     return { init };
 })();

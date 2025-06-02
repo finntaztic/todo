@@ -12,14 +12,20 @@
             <li>
                 <div>
                     <h3>Projects</h3>
-                    <button>Add Project</button>
+                    <button class="btn-open-project">Add Project</button>
                 </div>
-                <ul>
+                <ul class="project-list" >
                     <li><nav>Project 1</nav></li>
                 </ul>
             </li>
         </ul>
     </div>
+
+    <dialog class="dialog-new-project">
+        <label for="addProject">Add New Project</label><br>
+        <input type="addProject" id="addProject" name="addProject"><br>
+        <button class="btn-add-project">Add Project</button>
+    </dialog>
 
     <div>
         <button class="btn-open-dialog">Add New Task</button>
@@ -28,7 +34,7 @@
             </tbody>
         </table>
     </div>
-    <dialog>
+    <dialog class="dialog-new-task">
         <p>Add new task<p>
         
         <form>
