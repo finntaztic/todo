@@ -7,6 +7,21 @@
 </head>
 <body>
     <div>
+        <ul>
+            <li><nav><h3>All Tasks</h3></nav></li>
+            <li>
+                <div>
+                    <h3>Projects</h3>
+                    <button>Add Project</button>
+                </div>
+                <ul>
+                    <li><nav>Project 1</nav></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div>
         <button class="btn-open-dialog">Add New Task</button>
         <table>
             <tbody>
@@ -31,6 +46,11 @@
                     <option value="⭐️⭐️⭐️">⭐️⭐️⭐️ High</option>
                     <option value="⭐️⭐️">⭐️⭐️ Mid</option>
                     <option value="⭐️">⭐️ Low</option>
+                </select>
+        
+            <label for="project">Project</label><br>
+                <select name="project" id="project">
+                    <option value="Project 1">Project 1</option>
                 </select>
             
             <button class="btn-add-task">Add new Task</button>

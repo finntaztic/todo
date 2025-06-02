@@ -3,13 +3,15 @@ class Task {
     #description;
     #date;
     #priority;
+    #project;
     #id;
 
-    constructor (title, description, date, priority, id = crypto.randomUUID()){
+    constructor (title, description, date, priority, project, id = crypto.randomUUID()){
         this.#title = title;
         this.#description = description;
         this.#date = date;
         this.#priority = priority;
+        this.#project = project;
         this.#id = id;
     }
 
@@ -29,10 +31,12 @@ class Task {
         return this.#priority
     }
 
+    getProject (){
+        return this.#project
+    }
+
     getID () {
         return this.#id;
     }
 }
-
-
 export { Task }

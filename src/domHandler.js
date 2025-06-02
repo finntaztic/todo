@@ -49,6 +49,9 @@ const UI = (() => {
         })  
     }
 
+    function addProject (){
+        const opt = document.createElement('')
+    }
     return { init };
 })();
 
