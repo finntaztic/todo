@@ -61,31 +61,28 @@ const UI = (() => {
         dialogNewProject.close();
     }
 
+
     function renderProject (){
 
         const options = ['Project 1'];
-
-        //pushes new project 
-
-        //project 1 gets reiterated each click
-
-        
         const projectInput = document.querySelector('#addProject').value;
-        const ul = document.querySelector('.project-list')
-        const li = document.createElement('li');
-        const projectList = document.createTextNode(projectInput);
-
-        li.appendChild(projectList);
-        ul.appendChild(li);
 
         const newOption = projectInput;
         options.push(newOption);
+        const ul = document.querySelector('.project-list');
+
 
         const select = document.querySelector('#project');
         options.forEach(option => {
             let newOption = document.createElement('option');
             newOption.innerText = option;
             select.appendChild(newOption);
+        })
+
+        options.forEach(option => {
+            let newOption = document.createElement('option');
+            newOption.innerText = option;
+            ul.appendChild(newOption)
         })
     }
 
