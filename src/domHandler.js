@@ -25,9 +25,10 @@ const UI = (() => {
         const descriptionInput = document.querySelector('#description').value;
         const dateInput = document.querySelector('#date').value;
         const priorityInput = document.querySelector('#priority').value;
+        const projectInput = document.querySelector('#project').value;
 
 
-        const todo = new Task (titleInput, descriptionInput, dateInput, priorityInput);
+        const todo = new Task (titleInput, descriptionInput, dateInput, priorityInput, projectInput);
         Todo.addTodo(todo)
         renderTask(todo)
         dialogNewTask.close();
@@ -61,6 +62,14 @@ const UI = (() => {
     }
 
     function renderProject (){
+
+        const options = ['Project 1'];
+
+        //pushes new project 
+
+        //project 1 gets reiterated each click
+
+        
         const projectInput = document.querySelector('#addProject').value;
         const ul = document.querySelector('.project-list')
         const li = document.createElement('li');
@@ -68,7 +77,18 @@ const UI = (() => {
 
         li.appendChild(projectList);
         ul.appendChild(li);
+
+        const newOption = projectInput;
+        options.push(newOption);
+
+        const select = document.querySelector('#project');
+        options.forEach(option => {
+            let newOption = document.createElement('option');
+            newOption.innerText = option;
+            select.appendChild(newOption);
+        })
     }
+
     return { init };
 })();
 
