@@ -1,0 +1,22 @@
+// Manages todos (add, remove, store)
+
+const Projects = (() => {
+    const projects = ['Project 1'];
+
+    function renderProject (){
+       const ul = document.querySelector('.project-list');
+        projects.forEach(option => {
+            let newOption = document.createElement('option');
+            newOption.innerText = option;
+            ul.appendChild(newOption)
+        })
+    }
+
+    function addProject (){
+
+    }
+
+    return (renderProject, addProject);
+})();
+
+// export {Projects}
